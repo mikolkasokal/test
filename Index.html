@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій сайт</title>
+    <link rel="stylesheet" href="site.css"> 
+</head>
+
+<body>
+
+    <div class="background-video-container">
+        <video autoplay muted loop id="background-video">
+            <source src="your_background_video.mp4" type="video/mp4"> 
+            Ваш браузер не підтримує тег video.
+        </video>
+        <div class="video-overlay">
+            <h1>Ласкаво просимо!</h1>
+            <p>Цей розділ має фонове відео.</p>
+        </div>
+    </div>
+
+    <header>
+        <h1>Мій сайт</h1>
+    </header>
+
+    <nav>
+        <h2>Меню</h2>
+        <ul>
+            <li><a href="#">Головна</a></li>
+            <li><a href="#media-content">Медіа</a></li>
+            <li><a href="#interactive-elements">Інтерактив</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 id="media-content">Медіа та Вбудований Контент</h2>
+        <p>Тут розміщуються приклади вставки різних медіаелементів та вбудованого контенту.</p>
+
+        <h3>Відео через тег &lt;video&gt;</h3>
+        <video width="320" height="240" controls>
+            <source src="your_video.mp4" type="video/mp4"> 
+            <source src="your_video.ogg" type="video/ogg">
+            Ваш браузер не підтримує тег video.
+        </video>
+        <hr>
+
+        <h3>Відео через &lt;iframe&gt; (YouTube)</h3>
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/VIDEO_ID" 
+            title="YouTube video player" frameborder="0" allowfullscreen>
+        </iframe>
+        <hr>
+
+        <h3>Аудіо через тег &lt;audio&gt;</h3>
+        <audio controls>
+            <source src="your_audio.mp3" type="audio/mpeg">
+            Ваш браузер не підтримує тег audio.
+        </audio>
+        <hr>
+
+        <h3>Вбудована Карта через &lt;iframe&gt;</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20305.811559828453!2d30.52184138624128!3d50.4501815160862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce7c6b412e8b%3A0xe54d89a72179612!2z0J3RgdC60LDRjyDQmtC40LXQstC60L3QvtC_0ZbQu9GM!5e0!3m2!1suk!2sua!4v1701280000000" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <hr>
+
+        <h2 id="interactive-elements">Інтерактивні та Графічні Елементи</h2>
+        
+        <h3>Карта Зображення (Image Map)</h3>
+        <p>Цілі посилання залежно від частини зображення.</p>
+        <img src="shape_example.png" alt="Приклад зображення з формами" usemap="#shapeMap" width="400" height="200">
+
+        <map name="shapeMap">
+            <area shape="rect" coords="50, 20, 150, 180" href="#" alt="Прямокутник" title="Це прямокутник"> 
+            <area shape="circle" coords="250, 100, 80" href="#" alt="Коло" title="Це коло"> 
+            <area shape="poly" coords="320,180, 370,10, 420,180" href="#" alt="Трикутник" title="Це трикутник"> 
+        </map>
+        <hr>
+
+        <h3>Елемент &lt;canvas&gt;</h3>
+        <p>Для динамічної графіки та малювання (потрібен JS для відображення).</p>
+        <canvas id="myCanvas" width="300" height="150" style="border:1px solid #000;"></canvas>
+
+        <script>
+            // Приклад простого малювання на Canvas
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Намалювати синій прямокутник
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(10, 10, 100, 75); 
+            
+            // Намалювати червоне коло
+            ctx.beginPath();
+            ctx.arc(200, 75, 50, 0, 2 * Math.PI);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+        </script>
+        <hr>
+
+        <h3>Векторна Графіка (SVG)</h3>
+        <p>Масштабована векторна графіка, описана XML-кодом.</p>
+        <svg width="200" height="100">
+            <rect width="180" height="80" x="10" y="10" style="fill:rgb(255,0,0);stroke-width:3;stroke:rgb(0,0,0)" />
+            <text x="30" y="55" fill="white">Hello SVG!</text>
+        </svg>
+
+    </main>
+
+    <aside>
+        <h2>Мої роботи</h2>
+        <ul>
+            <li>Проєкт 1</li>
+            <li>Проєкт 2</li>
+            <li>Проєкт 3</li>
+        </ul>
+    </aside>
+
+    <footer>
+        <h2>Мої контакти</h2>
+        <p>Email: example@mail.com</p>
+        <p>Телефон: +380 XX XXX XXXX</p>
+    </footer>
+
+</body>
+</html>
